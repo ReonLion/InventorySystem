@@ -5,7 +5,7 @@
 class BinarySearchTree
 {
 public:
-	// Create a new BinarySearchTree with root set to NULL
+	// 创建一个root为nullptr的二叉搜索树
 	BinarySearchTree();
 
 	// BinarySearchTree is destructed, the used memory is deallocated appropriately
