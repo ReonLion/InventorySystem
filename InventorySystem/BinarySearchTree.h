@@ -8,47 +8,46 @@ public:
 	// 创建一个root为nullptr的二叉搜索树
 	BinarySearchTree();
 
-	// BinarySearchTree is destructed, the used memory is deallocated appropriately
+	// 删除二叉搜索树，释放分配的内存
 	~BinarySearchTree();
 
-	// Insert a Node with a TreeData object
-	// Return true if node is inserted, new node's quantity = quantity 
-	// Return false if treeData is nullptr
-	// Return false if treeData is already in BinarySearchTree, exist node's quantity += quantity
-	bool Insert(TreeData *treeData, int quantity);
+	// 向树中插入一个TreeData
+	// 插入成功则返回true，Node中TreeData的数目quantity = quantity
+	// 如果TreeData是空指针，返回false
+	// 如果TreeData已经存在树中，返回false，Node中TreeData的数目quantity += quantity
+	bool Insert(TreeData *p_treeData, int quantity);
 
-	// Remove a TreeData object from BinarySearchTree
-	// Return true if quantity is greater than 1, quantity -= 1
-	// Return true if quantity is 1, remove TreeData from BinarySearchTree
-	// Otherwise, return false
+	// 从树中删除一个TreeData
+	// 如果TreeData的数目大于1，返回true，quantity -= 1
+	// 如果TreeData的数目等于1，返回true，从树中删除TreeData
+	// 其它情况，返回false
 	bool remove(const TreeData &treeData, int quantity);
 
 private:
 	struct Node
 	{
-		TreeData *data;
-		Node *right;
-		Node *left;
+		TreeData *p_data;
+		Node *p_right;
+		Node *p_left;
 		int quantity;
 	};
 	
-	Node *root;
+	Node *p_root;
 
-	// Return true if node is inserted, new node's quantity = quantity 
-	// Return false if treeData is already in BinarySearchTree, exist node's quantity += quantity
-	bool __Insert(Node *&root, TreeData *treeData, int quantity);
+	// 插入成功则返回true，Node中TreeData的数目quantity = quantity
+	// 如果TreeData已经存在树中，返回false，Node中TreeData的数目quantity += quantity
+	bool InsertHandle(Node *&p_root, TreeData *p_treeData, int quantity);
 
-	// Remove a Node from BinarySearchTree
-	// Return true if quantity is greater than 1, quantity -= 1
-	// Return true if quantity is 1, remove TreeData from BinarySearchTree
-	// Otherwise, return false
-	bool __Remove(Node *&, const TreeData & treeData, int quantity);
+	// 从树中删除一个TreeData
+	// 如果TreeData的数目大于1，返回true，quantity -= 1
+	// 如果TreeData的数目等于1，返回true，从树中删除TreeData
+	// 其它情况，返回false
+	bool RemoveHandle(Node *&p_root, const TreeData & treeData, int quantity);
 
-	// Remove a node and the new root is assigned to the value returned by findAndDeleteSmallest()
-	void __RemoveRoot(Node *&root);
+	// 从树中删除一个Node，并给这个Node的子树重新分配根节点
+	void RemoveRoot(Node *&p_root);
 
-	// Find and Delete the node with the smallest TreeData value in the subtree
-	// Return Deleted TreeData
-	TreeData * findAndDeleteSmallest(Node *&root, int &count);
+	// 寻找并删除p_root子树中最小的一个Node，并返回这个Node中的p_treeData
+	TreeData * FindAndDeleteSmallest(Node *&p_root, int &count);
 };
 
