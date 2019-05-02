@@ -13,21 +13,92 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Inventory">
+      <UniqueIdentifier>{1fd9793d-8183-4373-8c6c-594d50a630c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items">
+      <UniqueIdentifier>{19d1cacb-5c78-40d4-ad5e-e029cbdd1226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Backpack">
+      <UniqueIdentifier>{5ed1ce25-9245-4ccf-b7e3-f674de8405a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Inventory">
+      <UniqueIdentifier>{9d577225-d0f7-4b96-aaac-fc990b1934ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items">
+      <UniqueIdentifier>{ff529615-ec44-4eaa-a6a9-a96797d0da45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Backpack">
+      <UniqueIdentifier>{e5a2d47d-4a97-41ff-b3c3-6f11a5115bf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Weapon">
+      <UniqueIdentifier>{fe20cb79-3693-40f2-ba97-13d786900240}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Equipment">
+      <UniqueIdentifier>{265b0e1c-7147-44f3-aae0-b8b21157085f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Potion">
+      <UniqueIdentifier>{ec16c024-dcc4-4ad1-8b83-3d45bd74530f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Cloth">
+      <UniqueIdentifier>{bcf2c3af-7474-48b6-8e26-3dd78651b100}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Equipment">
+      <UniqueIdentifier>{8a92a806-bfc1-4b55-8114-80353b8c8b3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Cloth">
+      <UniqueIdentifier>{9ef3b860-cb1e-4605-8d0e-7bc591a1a6e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Potion">
+      <UniqueIdentifier>{f43587c7-4312-46fd-b37c-4765ab5c5c8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Weapon">
+      <UniqueIdentifier>{9cab6c72-28de-4c74-9073-9b735d41e1b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinarySearchTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TreeData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="Inventory\BinarySearchTree.cpp">
+      <Filter>Source Files\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory\Inventory.cpp">
+      <Filter>Source Files\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory\TreeData.cpp">
+      <Filter>Source Files\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Item.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BinarySearchTree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TreeData.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <Text Include="Inventory\PlayerInventory.txt">
+      <Filter>Source Files\Inventory</Filter>
+    </Text>
+    <Text Include="Items\Equipment\EquipmentTypes.txt">
+      <Filter>Source Files\Items\Equipment</Filter>
+    </Text>
+    <Text Include="Items\Cloth\ClothTypes.txt">
+      <Filter>Source Files\Items\Cloth</Filter>
+    </Text>
+    <Text Include="Items\Potion\PotionTypes.txt">
+      <Filter>Source Files\Items\Potion</Filter>
+    </Text>
+    <Text Include="Items\Weapon\WeaponTypes.txt">
+      <Filter>Source Files\Items\Weapon</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Inventory\BinarySearchTree.h">
+      <Filter>Header Files\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory\Inventory.h">
+      <Filter>Header Files\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory\TreeData.h">
+      <Filter>Header Files\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Item.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

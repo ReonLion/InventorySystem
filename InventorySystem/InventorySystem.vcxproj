@@ -18,6 +18,25 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Inventory\BinarySearchTree.cpp" />
+    <ClCompile Include="Inventory\Inventory.cpp" />
+    <ClCompile Include="Inventory\TreeData.cpp" />
+    <ClCompile Include="Items\Item.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Inventory\PlayerInventory.txt" />
+    <Text Include="Items\Cloth\ClothTypes.txt" />
+    <Text Include="Items\Equipment\EquipmentTypes.txt" />
+    <Text Include="Items\Potion\PotionTypes.txt" />
+    <Text Include="Items\Weapon\WeaponTypes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Inventory\BinarySearchTree.h" />
+    <ClInclude Include="Inventory\Inventory.h" />
+    <ClInclude Include="Inventory\TreeData.h" />
+    <ClInclude Include="Items\Item.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{2995BC7A-5A1D-4FD1-81F8-8521DA6ED13D}</ProjectGuid>
@@ -114,14 +133,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="BinarySearchTree.h" />
-    <ClInclude Include="TreeData.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BinarySearchTree.cpp" />
-    <ClCompile Include="TreeData.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

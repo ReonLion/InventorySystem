@@ -10,6 +10,7 @@ BinarySearchTree::BinarySearchTree()
 
 BinarySearchTree::~BinarySearchTree()
 {
+	ClearTreeHandle(p_root);
 }
 
 bool BinarySearchTree::Insert(TreeData * p_treeData, int quantity)
@@ -24,6 +25,21 @@ bool BinarySearchTree::Insert(TreeData * p_treeData, int quantity)
 		return false;
 	}
 	return inserted;
+}
+
+bool BinarySearchTree::Remove(const TreeData & treeData, int quantity)
+{
+	return RemoveHandle(p_root, treeData, quantity);
+}
+
+void BinarySearchTree::ClearTree()
+{
+	ClearTreeHandle(p_root);
+}
+
+bool BinarySearchTree::IsEmpty() const
+{
+	return p_root == nullptr;
 }
 
 bool BinarySearchTree::InsertHandle(Node *& p_root, TreeData * p_treeData, int quantity)
@@ -118,6 +134,8 @@ void BinarySearchTree::RemoveRoot(Node *& p_root)
 	}
 	else
 	{
+		// p_root指向的节点有左右子树时
+		// 删除p_root右子树最小的节点，并使p_root->p_data = SmallestTreeData
 		delete p_root->p_data;
 		int count = 0;
 		p_root->p_data = FindAndDeleteSmallest(p_root->p_right, count);
@@ -130,6 +148,7 @@ TreeData * BinarySearchTree::FindAndDeleteSmallest(Node *& p_root, int & count)
 	if (p_root->p_left == nullptr)
 	{
 		// 删除p_root所指Node的左子树的最后一个节点，并返回删除的treeData
+		// p_root = p_root->p_right;
 		TreeData *p_treeData = p_root->p_data;
 		count = p_root->quantity;
 		Node *temp = p_root;
@@ -140,5 +159,17 @@ TreeData * BinarySearchTree::FindAndDeleteSmallest(Node *& p_root, int & count)
 	else
 	{
 		return FindAndDeleteSmallest(p_root->p_left, count);
+	}
+}
+
+void BinarySearchTree::ClearTreeHandle(Node *& p_root)
+{
+	if (p_root != nullptr)
+	{
+		ClearTreeHandle(p_root->p_left);
+		ClearTreeHandle(p_root->p_right);
+		delete p_root->p_data;
+		delete p_root;
+		p_root = nullptr;
 	}
 }

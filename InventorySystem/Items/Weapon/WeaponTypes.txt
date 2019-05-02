@@ -1,0 +1,7 @@
+#type, id, name, comment, ATK, MGK
+W, 001, Sword, The lost sword, +5, +0
+W, 002, Axe, An axe from grandpa, +8, -2
+W, 003, MagicSword, A sword with some magic, +4, +2
+W, 004, MagicAxe, An axe with some magic, +5, +1
+W, 005, Wand, A magic wand, +0, +5
+W, 006, OldWand, A fantasitic magic wand, +0, +10

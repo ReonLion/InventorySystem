@@ -21,7 +21,13 @@ public:
 	// 如果TreeData的数目大于1，返回true，quantity -= 1
 	// 如果TreeData的数目等于1，返回true，从树中删除TreeData
 	// 其它情况，返回false
-	bool remove(const TreeData &treeData, int quantity);
+	bool Remove(const TreeData &treeData, int quantity);
+
+	// 清空树并释放内存
+	void ClearTree();
+
+	// 树是否为空树
+	bool IsEmpty() const;
 
 private:
 	struct Node
@@ -49,5 +55,8 @@ private:
 
 	// 寻找并删除p_root子树中最小的一个Node，并返回这个Node中的p_treeData
 	TreeData * FindAndDeleteSmallest(Node *&p_root, int &count);
+
+	// 清空树，并删除TreeData
+	void ClearTreeHandle(Node *&root);
 };
 

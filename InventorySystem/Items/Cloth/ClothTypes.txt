@@ -1,0 +1,3 @@
+#type, id, name, comment, DEF, RGS
+C, 001, Armour, Metal armour, +5, +0
+C, 002, Robe, A yellow robe, +0, +5
