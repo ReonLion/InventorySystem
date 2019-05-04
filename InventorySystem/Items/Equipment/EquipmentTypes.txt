@@ -1,4 +1,0 @@
-#type, id, name, comment
-E, 001, SilverRing, A silver ring
-E, 002, GoldRing, A gold ring
-E, 003, CopperRing, A copper ring

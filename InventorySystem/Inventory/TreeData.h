@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+
+using namespace std;
 
 //----------------------------------------------------------------------------------------
 // Abstract Class TreeData implements an abstract data type held by BinarySearchTree's
@@ -8,6 +11,9 @@
 
 class TreeData
 {
+
+friend ostream& operator<<(ostream&, const TreeData &);
+
 public:
 	// Do nothing
 	TreeData();
@@ -16,15 +22,20 @@ public:
 
 	// Return true if this TreeData object is smaller than the other one
 	// Two TreeData object must can be compared
-	virtual bool operator<(const TreeData &) const = 0;
+	virtual bool operator<(const TreeData & otherTreeData) const = 0;
 
 	// Return true if this TreeData object is bigger than the other one
-	virtual bool operator>(const TreeData &) const = 0;
+	virtual bool operator>(const TreeData & otherTreeData) const = 0;
 
 	// Return true if Two TreeData objects are equal
-	virtual bool operator==(const TreeData &) const = 0;
+	virtual bool operator==(const TreeData & otherTreeData) const = 0;
 
 	// Return true if Two TreeData objects are not equal
-	virtual bool operator!=(const TreeData &) const = 0;
+	virtual bool operator!=(const TreeData & otherTreeData) const = 0;
+
+	virtual void print(ostream &output) const = 0;
+
+	// 克隆对象，在Item中override
+	virtual TreeData* Clone() = 0;
 };
 

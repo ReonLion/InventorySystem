@@ -29,6 +29,14 @@ public:
 	// 树是否为空树
 	bool IsEmpty() const;
 
+	// 判断树中是否有一个treeData
+	// 如果存在，返回数目
+	// 如果不存在，返回0
+	int Exist(TreeData *p_treeData);
+
+	// 打印树
+	void Display();
+
 private:
 	struct Node
 	{
@@ -58,5 +66,13 @@ private:
 
 	// 清空树，并删除TreeData
 	void ClearTreeHandle(Node *&root);
+
+	// 判断树中是否有一个treeData
+	// 如果存在，返回数目
+	// 如果不存在，返回0
+	int ExistHandle(Node *&p_root, TreeData *p_treeData);
+
+	// 打印树
+	void DisplayHandle(Node *&p_root);
 };
 

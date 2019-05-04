@@ -1,8 +1,0 @@
-#type, id, name, comment, HP, MP
-P, 001, LittleHPPotion, A HPPotion increases 2 HP, +2, +0
-P, 002, MiddleHPPotion, A HPPotion increases 3 HP, +3, +0
-P, 003, BigHPPotion, A HPPotion increases 4 HP, +4, +0
-P, 004, LittleMPPotion, A MPPotion increases 2 MP, +0, +2
-P, 005, MiddleMPPotion, A MPPotion increases 3 MP, +0, +3
-P, 006, BigMPPotion, A MPPotion increases 4 MP, +0, +4
-P, 007, CrazyPotion, A Potion let you exchange HP for MP, -4, +4

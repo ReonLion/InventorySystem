@@ -31,29 +31,41 @@
     <Filter Include="Header Files\Backpack">
       <UniqueIdentifier>{e5a2d47d-4a97-41ff-b3c3-6f11a5115bf1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Items\Weapon">
-      <UniqueIdentifier>{fe20cb79-3693-40f2-ba97-13d786900240}</UniqueIdentifier>
+    <Filter Include="Source Files\Main">
+      <UniqueIdentifier>{f1af73ef-bc76-4036-903c-c38928c89fd4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Items\Equipment">
-      <UniqueIdentifier>{265b0e1c-7147-44f3-aae0-b8b21157085f}</UniqueIdentifier>
+    <Filter Include="Header Files\Main">
+      <UniqueIdentifier>{d1dc85d3-4a96-45a0-ab72-93aa68319054}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Items\Potion">
-      <UniqueIdentifier>{ec16c024-dcc4-4ad1-8b83-3d45bd74530f}</UniqueIdentifier>
+    <Filter Include="Source Files\Main\Potions">
+      <UniqueIdentifier>{e2ffceb3-97d8-4d20-98d5-8d33d92bbe5a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Items\Cloth">
-      <UniqueIdentifier>{bcf2c3af-7474-48b6-8e26-3dd78651b100}</UniqueIdentifier>
+    <Filter Include="Header Files\Main\Potions">
+      <UniqueIdentifier>{0bab77fe-39ae-4825-8730-6b81a24c87a7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Items\Equipment">
-      <UniqueIdentifier>{8a92a806-bfc1-4b55-8114-80353b8c8b3c}</UniqueIdentifier>
+    <Filter Include="Source Files\Main\Weapons">
+      <UniqueIdentifier>{0c6dd9db-b696-451b-a190-fe4c558337b9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Items\Cloth">
-      <UniqueIdentifier>{9ef3b860-cb1e-4605-8d0e-7bc591a1a6e8}</UniqueIdentifier>
+    <Filter Include="Header Files\Main\Weapons">
+      <UniqueIdentifier>{fa402ac0-a553-44da-8a30-c7232b613847}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Items\Potion">
-      <UniqueIdentifier>{f43587c7-4312-46fd-b37c-4765ab5c5c8f}</UniqueIdentifier>
+    <Filter Include="Header Files\Main\Equipments">
+      <UniqueIdentifier>{5435a500-53c5-4612-9312-1e988f1e6300}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Items\Weapon">
-      <UniqueIdentifier>{9cab6c72-28de-4c74-9073-9b735d41e1b9}</UniqueIdentifier>
+    <Filter Include="Source Files\Main\Equipments">
+      <UniqueIdentifier>{6d777a56-b5d9-4e58-8feb-024c4579ea13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Main\Clothes">
+      <UniqueIdentifier>{c250f80e-d2e5-4a9e-8c55-478968336e8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Main\Clothes">
+      <UniqueIdentifier>{330ab112-333a-4527-82a7-c6a6a24e4c7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Main\Coins">
+      <UniqueIdentifier>{7d01d77c-2979-4f41-ae53-b50fd82f0a68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Main\Coins">
+      <UniqueIdentifier>{3fe25114-9237-4d17-9cd0-b9c036a6062f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -69,23 +81,87 @@
     <ClCompile Include="Items\Item.cpp">
       <Filter>Source Files\Items</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Inventory\PlayerInventory.txt">
-      <Filter>Source Files\Inventory</Filter>
-    </Text>
-    <Text Include="Items\Equipment\EquipmentTypes.txt">
-      <Filter>Source Files\Items\Equipment</Filter>
-    </Text>
-    <Text Include="Items\Cloth\ClothTypes.txt">
-      <Filter>Source Files\Items\Cloth</Filter>
-    </Text>
-    <Text Include="Items\Potion\PotionTypes.txt">
-      <Filter>Source Files\Items\Potion</Filter>
-    </Text>
-    <Text Include="Items\Weapon\WeaponTypes.txt">
-      <Filter>Source Files\Items\Weapon</Filter>
-    </Text>
+    <ClCompile Include="Items\WeaponBase.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\ClothBase.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\CoinBase.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\EquipmentBase.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\PotionBase.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Potions\BigHPPotion.cpp">
+      <Filter>Source Files\Main\Potions</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Potions\BigMPPotion.cpp">
+      <Filter>Source Files\Main\Potions</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Potions\LittleHPPotion.cpp">
+      <Filter>Source Files\Main\Potions</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Potions\LittleMPPotion.cpp">
+      <Filter>Source Files\Main\Potions</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Potions\MiddleHPPotion.cpp">
+      <Filter>Source Files\Main\Potions</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Potions\MiddleMPPotion.cpp">
+      <Filter>Source Files\Main\Potions</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\main.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Backpack\Backpack.cpp">
+      <Filter>Source Files\Backpack</Filter>
+    </ClCompile>
+    <ClCompile Include="Backpack\ArrayData.cpp">
+      <Filter>Source Files\Backpack</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\ItemFactory.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\ItemManager.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Weapons\MagicSword.cpp">
+      <Filter>Source Files\Main\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Weapons\OldSword.cpp">
+      <Filter>Source Files\Main\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Weapons\RusstyAxe.cpp">
+      <Filter>Source Files\Main\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Equipments\CopperRing.cpp">
+      <Filter>Source Files\Main\Equipments</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Equipments\GoldRing.cpp">
+      <Filter>Source Files\Main\Equipments</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Equipments\SilverRing.cpp">
+      <Filter>Source Files\Main\Equipments</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Clothes\CuteSkirt.cpp">
+      <Filter>Source Files\Main\Clothes</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Clothes\IronArmour.cpp">
+      <Filter>Source Files\Main\Clothes</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Clothes\OldRobe.cpp">
+      <Filter>Source Files\Main\Clothes</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Coins\GoldCoin.cpp">
+      <Filter>Source Files\Main\Coins</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMain\Coins\SilverCoin.cpp">
+      <Filter>Source Files\Main\Coins</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inventory\BinarySearchTree.h">
@@ -99,6 +175,99 @@
     </ClInclude>
     <ClInclude Include="Items\Item.h">
       <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\WeaponBase.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\ClothBase.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CoinBase.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\EquipmentBase.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\PotionBase.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Potions\BigHPPotion.h">
+      <Filter>Header Files\Main\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Potions\BigMPPotion.h">
+      <Filter>Header Files\Main\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Potions\LittleHPPotion.h">
+      <Filter>Header Files\Main\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Potions\LittleMPPotion.h">
+      <Filter>Header Files\Main\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Potions\MiddleHPPotion.h">
+      <Filter>Header Files\Main\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Potions\MiddleMPPotion.h">
+      <Filter>Header Files\Main\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Potions\Potions.h">
+      <Filter>Header Files\Main\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="Backpack\Backpack.h">
+      <Filter>Header Files\Backpack</Filter>
+    </ClInclude>
+    <ClInclude Include="Backpack\ArrayData.h">
+      <Filter>Header Files\Backpack</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\ItemFactory.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\ItemManager.h">
+      <Filter>Header Files\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Weapons\MagicSword.h">
+      <Filter>Header Files\Main\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Weapons\OldSword.h">
+      <Filter>Header Files\Main\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Weapons\RusstyAxe.h">
+      <Filter>Header Files\Main\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Equipments\CopperRing.h">
+      <Filter>Header Files\Main\Equipments</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Equipments\GoldRing.h">
+      <Filter>Header Files\Main\Equipments</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Equipments\SilverRing.h">
+      <Filter>Header Files\Main\Equipments</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Clothes\CuteSkirt.h">
+      <Filter>Header Files\Main\Clothes</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Clothes\IronArmour.h">
+      <Filter>Header Files\Main\Clothes</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Clothes\OldRobe.h">
+      <Filter>Header Files\Main\Clothes</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Coins\GoldCoin.h">
+      <Filter>Header Files\Main\Coins</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Coins\SilverCoin.h">
+      <Filter>Header Files\Main\Coins</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Equipments\Equipments.h">
+      <Filter>Header Files\Main\Equipments</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Clothes\Clothes.h">
+      <Filter>Header Files\Main\Clothes</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Coins\Coins.h">
+      <Filter>Header Files\Main\Coins</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMain\Weapons\Weapons.h">
+      <Filter>Header Files\Main\Weapons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

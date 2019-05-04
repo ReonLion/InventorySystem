@@ -19,23 +19,74 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Backpack\ArrayData.cpp" />
+    <ClCompile Include="Backpack\Backpack.cpp" />
     <ClCompile Include="Inventory\BinarySearchTree.cpp" />
     <ClCompile Include="Inventory\Inventory.cpp" />
     <ClCompile Include="Inventory\TreeData.cpp" />
+    <ClCompile Include="Items\ClothBase.cpp" />
+    <ClCompile Include="Items\CoinBase.cpp" />
+    <ClCompile Include="Items\EquipmentBase.cpp" />
     <ClCompile Include="Items\Item.cpp" />
+    <ClCompile Include="Items\ItemFactory.cpp" />
+    <ClCompile Include="Items\PotionBase.cpp" />
+    <ClCompile Include="Items\WeaponBase.cpp" />
+    <ClCompile Include="TestMain\Clothes\CuteSkirt.cpp" />
+    <ClCompile Include="TestMain\Clothes\IronArmour.cpp" />
+    <ClCompile Include="TestMain\Clothes\OldRobe.cpp" />
+    <ClCompile Include="TestMain\Coins\GoldCoin.cpp" />
+    <ClCompile Include="TestMain\Coins\SilverCoin.cpp" />
+    <ClCompile Include="TestMain\Equipments\CopperRing.cpp" />
+    <ClCompile Include="TestMain\Equipments\GoldRing.cpp" />
+    <ClCompile Include="TestMain\Equipments\SilverRing.cpp" />
+    <ClCompile Include="TestMain\ItemManager.cpp" />
+    <ClCompile Include="TestMain\main.cpp" />
+    <ClCompile Include="TestMain\Potions\BigHPPotion.cpp" />
+    <ClCompile Include="TestMain\Potions\BigMPPotion.cpp" />
+    <ClCompile Include="TestMain\Potions\LittleHPPotion.cpp" />
+    <ClCompile Include="TestMain\Potions\LittleMPPotion.cpp" />
+    <ClCompile Include="TestMain\Potions\MiddleHPPotion.cpp" />
+    <ClCompile Include="TestMain\Potions\MiddleMPPotion.cpp" />
+    <ClCompile Include="TestMain\Weapons\MagicSword.cpp" />
+    <ClCompile Include="TestMain\Weapons\OldSword.cpp" />
+    <ClCompile Include="TestMain\Weapons\RusstyAxe.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Inventory\PlayerInventory.txt" />
-    <Text Include="Items\Cloth\ClothTypes.txt" />
-    <Text Include="Items\Equipment\EquipmentTypes.txt" />
-    <Text Include="Items\Potion\PotionTypes.txt" />
-    <Text Include="Items\Weapon\WeaponTypes.txt" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="Backpack\ArrayData.h" />
+    <ClInclude Include="Backpack\Backpack.h" />
     <ClInclude Include="Inventory\BinarySearchTree.h" />
     <ClInclude Include="Inventory\Inventory.h" />
     <ClInclude Include="Inventory\TreeData.h" />
+    <ClInclude Include="Items\ClothBase.h" />
+    <ClInclude Include="Items\CoinBase.h" />
+    <ClInclude Include="Items\EquipmentBase.h" />
     <ClInclude Include="Items\Item.h" />
+    <ClInclude Include="Items\ItemFactory.h" />
+    <ClInclude Include="Items\PotionBase.h" />
+    <ClInclude Include="Items\WeaponBase.h" />
+    <ClInclude Include="TestMain\Clothes\Clothes.h" />
+    <ClInclude Include="TestMain\Clothes\CuteSkirt.h" />
+    <ClInclude Include="TestMain\Clothes\IronArmour.h" />
+    <ClInclude Include="TestMain\Clothes\OldRobe.h" />
+    <ClInclude Include="TestMain\Coins\Coins.h" />
+    <ClInclude Include="TestMain\Coins\GoldCoin.h" />
+    <ClInclude Include="TestMain\Coins\SilverCoin.h" />
+    <ClInclude Include="TestMain\Equipments\CopperRing.h" />
+    <ClInclude Include="TestMain\Equipments\Equipments.h" />
+    <ClInclude Include="TestMain\Equipments\GoldRing.h" />
+    <ClInclude Include="TestMain\Equipments\SilverRing.h" />
+    <ClInclude Include="TestMain\ItemManager.h" />
+    <ClInclude Include="TestMain\Potions\BigHPPotion.h" />
+    <ClInclude Include="TestMain\Potions\BigMPPotion.h" />
+    <ClInclude Include="TestMain\Potions\LittleHPPotion.h" />
+    <ClInclude Include="TestMain\Potions\LittleMPPotion.h" />
+    <ClInclude Include="TestMain\Potions\MiddleHPPotion.h" />
+    <ClInclude Include="TestMain\Potions\MiddleMPPotion.h" />
+    <ClInclude Include="TestMain\Potions\Potions.h" />
+    <ClInclude Include="TestMain\Weapons\MagicSword.h" />
+    <ClInclude Include="TestMain\Weapons\OldSword.h" />
+    <ClInclude Include="TestMain\Weapons\RusstyAxe.h" />
+    <ClInclude Include="TestMain\Weapons\Weapons.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

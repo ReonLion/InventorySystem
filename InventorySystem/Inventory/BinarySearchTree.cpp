@@ -1,5 +1,5 @@
 #include "BinarySearchTree.h"
-
+#include <iostream>
 
 
 BinarySearchTree::BinarySearchTree()
@@ -15,7 +15,7 @@ BinarySearchTree::~BinarySearchTree()
 
 bool BinarySearchTree::Insert(TreeData * p_treeData, int quantity)
 {
-	bool inserted;
+	/*bool inserted;
 	if (p_treeData)
 	{
 		inserted = InsertHandle(p_root, p_treeData, quantity);
@@ -23,8 +23,8 @@ bool BinarySearchTree::Insert(TreeData * p_treeData, int quantity)
 	else
 	{
 		return false;
-	}
-	return inserted;
+	}*/
+	return InsertHandle(p_root, p_treeData, quantity);
 }
 
 bool BinarySearchTree::Remove(const TreeData & treeData, int quantity)
@@ -42,6 +42,27 @@ bool BinarySearchTree::IsEmpty() const
 	return p_root == nullptr;
 }
 
+int BinarySearchTree::Exist(TreeData * p_treeData)
+{	
+	return ExistHandle(p_root, p_treeData);
+}
+
+void BinarySearchTree::Display()
+{
+	DisplayHandle(p_root);
+}
+
+void BinarySearchTree::DisplayHandle(Node *&p_root)
+{
+	if (p_root == nullptr)
+	{
+		return;
+	}
+	DisplayHandle(p_root->p_left);
+	std::cout << *p_root->p_data << ", Num: " << p_root->quantity << endl;
+	DisplayHandle(p_root->p_right);
+}
+
 bool BinarySearchTree::InsertHandle(Node *& p_root, TreeData * p_treeData, int quantity)
 {
 	bool inserted;
@@ -50,7 +71,7 @@ bool BinarySearchTree::InsertHandle(Node *& p_root, TreeData * p_treeData, int q
 		// 如果p_root是空指针，建立一个新节点
 		p_root = new Node;
 		// 新节点的p_data指向待插入的treeData
-		p_root->p_data = p_treeData;
+		p_root->p_data = p_treeData->Clone();
 		p_root->quantity = quantity;
 		p_root->p_left = p_root->p_right = nullptr;
 		return true;
@@ -76,7 +97,7 @@ bool BinarySearchTree::InsertHandle(Node *& p_root, TreeData * p_treeData, int q
 	return inserted;
 }
 
-bool BinarySearchTree::RemoveHandle(Node *&, const TreeData & treeData, int quantity)
+bool BinarySearchTree::RemoveHandle(Node *& p_root, const TreeData & treeData, int quantity)
 {
 	bool removed;
 	if (!p_root)
@@ -172,4 +193,31 @@ void BinarySearchTree::ClearTreeHandle(Node *& p_root)
 		delete p_root;
 		p_root = nullptr;
 	}
+}
+
+int BinarySearchTree::ExistHandle(Node *& p_root, TreeData * p_treeData)
+{
+	int count;
+	if (!p_root)
+	{
+		return 0;
+	}
+	else
+	{
+		if (*p_treeData < *p_root->p_data)
+		{
+			// treeData < root.data，则搜索左子树
+			count = ExistHandle(p_root->p_left, p_treeData);
+		}
+		else if (*p_treeData > *p_root->p_data)
+		{
+			// treeData > root.data，则搜索右子树
+			count = ExistHandle(p_root->p_right, p_treeData);
+		}
+		else
+		{
+			return p_root->quantity;
+		}
+	}
+	return count;
 }
