@@ -19,8 +19,10 @@ void PlayerGetFromInventory(Backpack* p_backpack, ItemManager* p_itemManager);
 
 int main()
 {
+	// 데절
 	Inventory* p_inventory = Inventory::GetInstance();
 	ItemManager* p_itemManager = new ItemManager();
+	// 데절
 	Backpack* p_backpack = Backpack::GetInstance();
 	p_backpack->SetInventory(p_inventory);
 	p_backpack->SetItemManager(p_itemManager);
