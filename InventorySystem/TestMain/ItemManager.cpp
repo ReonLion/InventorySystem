@@ -2,17 +2,20 @@
 
 ItemManager::ItemManager()
 {
-	ItemMixTable.resize(2);
-	// "Little HP Potion + Middle HP Potion + Big HP Potion = Super HP Potion"
-	ItemMixTable[0].push_back("Little HP Potion");
-	ItemMixTable[0].push_back("Middle HP Potion");
-	ItemMixTable[0].push_back("Big HP Potion");
-	ItemMixTable[0].push_back("Super HP Potion");
-	// "Little MP Potion + Middle MP Potion + Big HP Potion = Super MP Potion"
-	ItemMixTable[1].push_back("Little MP Potion");
-	ItemMixTable[1].push_back("Middle MP Potion");
-	ItemMixTable[1].push_back("Big MP Potion");
-	ItemMixTable[1].push_back("Super MP Potion");
+	//// 道具合成表
+	//ItemMixTable.resize(2);
+	//// "Little HP Potion + Middle HP Potion + Big HP Potion = Super HP Potion"
+	//ItemMixTable[0].push_back("Little HP Potion");
+	//ItemMixTable[0].push_back("Middle HP Potion");
+	//ItemMixTable[0].push_back("Big HP Potion");
+	//ItemMixTable[0].push_back("Super HP Potion");
+	//// "Little MP Potion + Middle MP Potion + Big HP Potion = Super MP Potion"
+	//ItemMixTable[1].push_back("Little MP Potion");
+	//ItemMixTable[1].push_back("Middle MP Potion");
+	//ItemMixTable[1].push_back("Big MP Potion");
+	//ItemMixTable[1].push_back("Super MP Potion");
+
+	ItemMixTable = { { "1", "2", "3" }, { "4", "5", "6" } };
 }
 
 ItemManager::~ItemManager()

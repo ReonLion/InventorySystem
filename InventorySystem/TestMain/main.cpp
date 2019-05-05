@@ -24,6 +24,14 @@ int main()
 	Backpack* p_backpack = new Backpack(p_inventory, p_itemManager);
 	InitializeBackpack(p_backpack, p_itemManager);
 
+	for (unsigned int i = 0; i < p_itemManager->ItemMixTable.size(); ++i)
+	{
+		for (unsigned int j = 0; j < p_itemManager->ItemMixTable[i].size(); ++j)
+		{
+			cout << p_itemManager->ItemMixTable[i][j] << endl;
+		}
+	}
+
 	int input;
 	do 
 	{
