@@ -47,6 +47,8 @@
     <ClCompile Include="TestMain\Potions\LittleMPPotion.cpp" />
     <ClCompile Include="TestMain\Potions\MiddleHPPotion.cpp" />
     <ClCompile Include="TestMain\Potions\MiddleMPPotion.cpp" />
+    <ClCompile Include="TestMain\Potions\SuperHPPotion.cpp" />
+    <ClCompile Include="TestMain\Potions\SuperMPPotion.cpp" />
     <ClCompile Include="TestMain\Weapons\MagicSword.cpp" />
     <ClCompile Include="TestMain\Weapons\OldSword.cpp" />
     <ClCompile Include="TestMain\Weapons\RusstyAxe.cpp" />
@@ -83,6 +85,8 @@
     <ClInclude Include="TestMain\Potions\MiddleHPPotion.h" />
     <ClInclude Include="TestMain\Potions\MiddleMPPotion.h" />
     <ClInclude Include="TestMain\Potions\Potions.h" />
+    <ClInclude Include="TestMain\Potions\SuperHPPotion.h" />
+    <ClInclude Include="TestMain\Potions\SuperMPPotion.h" />
     <ClInclude Include="TestMain\Weapons\MagicSword.h" />
     <ClInclude Include="TestMain\Weapons\OldSword.h" />
     <ClInclude Include="TestMain\Weapons\RusstyAxe.h" />

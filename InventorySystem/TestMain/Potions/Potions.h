@@ -5,3 +5,5 @@
 #include "MiddleMPPotion.h"
 #include "BigHPPotion.h"
 #include "BigMPPotion.h"
+#include "SuperHPPotion.h"
+#include "SuperMPPotion.h"

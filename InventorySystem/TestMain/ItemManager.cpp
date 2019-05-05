@@ -2,20 +2,7 @@
 
 ItemManager::ItemManager()
 {
-	//// 道具合成表
-	//ItemMixTable.resize(2);
-	//// "Little HP Potion + Middle HP Potion + Big HP Potion = Super HP Potion"
-	//ItemMixTable[0].push_back("Little HP Potion");
-	//ItemMixTable[0].push_back("Middle HP Potion");
-	//ItemMixTable[0].push_back("Big HP Potion");
-	//ItemMixTable[0].push_back("Super HP Potion");
-	//// "Little MP Potion + Middle MP Potion + Big HP Potion = Super MP Potion"
-	//ItemMixTable[1].push_back("Little MP Potion");
-	//ItemMixTable[1].push_back("Middle MP Potion");
-	//ItemMixTable[1].push_back("Big MP Potion");
-	//ItemMixTable[1].push_back("Super MP Potion");
-
-	ItemMixTable = { { "1", "2", "3" }, { "4", "5", "6" } };
+	
 }
 
 ItemManager::~ItemManager()
@@ -41,6 +28,27 @@ Item * ItemManager::Create(ItemType type, int id)
 	};
 }
 
+ItemMixStat ItemManager::GetItemMixedStat(string name)
+{
+	for(int i = 0; i < 2; ++i)
+	{
+		for (int j = 0; j < 4 - 1; ++j)
+		{
+			if (ItemMixTable[i][j] == name)
+			{
+				ItemMixStat stat;
+				stat.bCanBeMixed = true;
+				stat.p_sourceItemList = ItemMixTable[i];
+				stat.sourceItemListCount = 3;
+				stat.destinationItem = ItemMixTable[i][3];
+				return stat;
+			}
+		}
+	}
+	ItemMixStat stat = { false, nullptr, 0, ""};
+	return stat;
+}
+
 Item * ItemManager::Create(string name)
 {
 	// 简简单单=_=，TODO,哈希表
@@ -56,6 +64,10 @@ Item * ItemManager::Create(string name)
 	{
 		return new BigHPPotion();
 	}
+	else if (name == "Super HP Potion")
+	{
+		return new SuperHPPotion();
+	}
 	else if (name == "Little MP Potion")
 	{
 		return new LittleMPPotion();
@@ -67,6 +79,10 @@ Item * ItemManager::Create(string name)
 	else if (name == "Big MP Potion")
 	{
 		return new BigMPPotion();
+	}
+	else if (name == "Super MP Potion")
+	{
+		return new SuperMPPotion();
 	}
 	else if (name == "Magic Sword")
 	{
@@ -179,6 +195,10 @@ Item * ItemManager::CreatePotion(int id)
 		return new MiddleMPPotion();
 	case 6:
 		return new BigMPPotion();
+	case 7:
+		return new SuperHPPotion();
+	case 8:
+		return new SuperMPPotion();
 	default:
 		return nullptr;
 	}

@@ -71,20 +71,37 @@ private:
 	// 返回含有item的box
 	// 背包中没有Item则返回-1
 	// 有Item，返回Box下标
-	int HasItem(Item *& p_item) const;
+	int HasItem(Item * p_item) const;
+
+	// 返回含有item的box
+	// 背包中没有Item则返回-1
+	// 有Item，返回Box下标
+	int HasItem(string name) const;
 
 	// 如果存在item，quantity+=quantity，如果不存在，quantity = quantity，返回true
 	// 没有空位，返回false, 并添加到仓库中
 	bool AddHandle(Item* p_item, int quantity);
+
+	// 如果存在item，quantity+=quantity，如果不存在，quantity = quantity，返回true
+	// 没有空位，返回false, 并添加到仓库中
+	bool AddHandle(string name, int quantity);
 
 	// 如果item的数目大于1，返回true，quantity -= 1
 	// 如果item的数目等于1，返回true，删除arrayData
 	// 其它情况，返回false
 	bool RemoveHandle(Item* & p_item, int quantity);
 
+	// 如果item的数目大于1，返回true，quantity -= 1
+	// 如果item的数目等于1，返回true，删除arrayData
+	// 其它情况，返回false
+	bool RemoveHandle(string & name, int quantity);
+
 	// 获得最久前使用的一个Box
 	// 返回box的编号
 	int GetLeastUsedBox() const;
+
+	// 判断道具是否能合成，以及道具合成
+	bool Mix(Item* p_item);
 
 	// 刷新box的使用历史，i是这次使用的box编号
 	void UpdateBoxUseHistory(int i);

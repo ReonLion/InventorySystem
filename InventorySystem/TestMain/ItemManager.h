@@ -8,18 +8,17 @@
 #include "./Equipments/Equipments.h"
 #include "./Coins/Coins.h"
 
-typedef std::uint64_t hash_t;
-constexpr hash_t prime = 0x100000001B3ull;
-constexpr hash_t basis = 0xCBF29CE484222325ull;
-
 class ItemManager : public ItemFactory
 {
 public:
 	ItemManager();
 	~ItemManager();
 
-	virtual Item* Create(ItemType type, int id) override;
-	Item* Create(string name);
+	Item* Create(ItemType type, int id) override;
+
+	virtual ItemMixStat GetItemMixedStat(string name) override;
+
+	Item* Create(string name) override;
 
 private:
 	Item* CreateWeapon(int id);
@@ -27,4 +26,11 @@ private:
 	Item* CreateCloth(int id);
 	Item* CreatePotion(int id);
 	Item* CreateCoin(int id);
+
+	// 道具合成表
+	string ItemMixTable[2][4] = 
+	{ 
+		{"Little HP Potion", "Middle HP Potion", "Big HP Potion", "Super HP Potion"}, 
+		{"Little MP Potion", "Middle MP Potion", "Big MP Potion", "Super MP Potion"},
+	};
 };

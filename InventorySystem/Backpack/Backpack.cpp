@@ -38,6 +38,7 @@ bool Backpack::Pick(Item * p_item, int quantity)
 	bool res = AddHandle(p_item, quantity);
 	cout << "You pick up a " << p_item->GetName() << ", Backpack remains " << GetItemCount(p_item)
 		<< ", Inventory remains: " << p_inventory->Exist(p_item) << endl;
+
 	return res;
 }
 
@@ -57,7 +58,7 @@ bool Backpack::UseBox(int i)
 			RemoveHandle(p_item, 1);
 
 			// Debug
-			cout << "You use a " << p_item->GetName() << ", Backpack remains " << HasItem(p_item)
+			cout << "You use a " << p_item->GetName() << ", Backpack remains " << GetItemCount(p_item)
 				<< ", Inventory remains: " << p_inventory->Exist(p_item) << endl;
 
 			// 删除缓存产生的item
@@ -177,7 +178,7 @@ int Backpack::HasEmpty() const
 	return -1;
 }
 
-int Backpack::HasItem(Item * &p_item) const
+int Backpack::HasItem(Item * p_item) const
 {
 	for (int i = 0; i < capacity; ++i)
 	{
@@ -190,6 +191,19 @@ int Backpack::HasItem(Item * &p_item) const
 	return -1;
 }
 
+
+int Backpack::HasItem(string name) const
+{
+	for (int i = 0; i < capacity; ++i)
+	{
+		if (boxes[i].p_item != nullptr and (boxes[i].p_item->GetName()) == name)
+		{
+			return i;
+		}
+	}
+
+	return -1;
+}
 
 bool Backpack::AddHandle(Item * p_item, int quantity)
 {
@@ -209,6 +223,9 @@ bool Backpack::AddHandle(Item * p_item, int quantity)
 		boxes[box].quantity = quantity;
 		// 刷新box使用
 		UpdateBoxUseHistory(box);
+
+		// 只有在这种情况下，才检查是否进行物品合成
+		Mix(p_item);
 		return true;
 	}
 	else
@@ -218,6 +235,15 @@ bool Backpack::AddHandle(Item * p_item, int quantity)
 		p_inventory->Add(p_item, quantity);
 		return false;
 	}
+}
+
+bool Backpack::AddHandle(string name, int quantity)
+{
+	bool res;
+	Item *p_item = p_itemFactory->Create(name);
+	res = AddHandle(p_item, quantity);
+	delete p_item;
+	return res;
 }
 
 bool Backpack::RemoveHandle(Item *& p_item, int quantity)
@@ -253,9 +279,58 @@ bool Backpack::RemoveHandle(Item *& p_item, int quantity)
 	return false;
 }
 
+bool Backpack::RemoveHandle(string & name, int quantity)
+{
+	// 时间不够，偷个懒
+	bool res;
+	Item* p_item = p_itemFactory->Create(name);
+	res = RemoveHandle(p_item, quantity);
+	delete p_item;
+	return res;
+}
+
 int Backpack::GetLeastUsedBox() const
 {
 	return *boxUseHistory.begin();
+}
+
+bool Backpack::Mix(Item * p_item)
+{
+	ItemMixStat stat = p_itemFactory->GetItemMixedStat(p_item->GetName());
+	if (!stat.bCanBeMixed)
+	{
+		// 道具不在合成列表里，直接返回
+		return false;
+	}
+	string *p_itemName = stat.p_sourceItemList;
+	for (int i = 0; i < stat.sourceItemListCount; ++i)
+	{
+		if (HasItem(*p_itemName) == -1)
+		{
+			// 当合成列表中有物品不存在在背包中，返回
+			return false;
+		}
+		++p_itemName;
+	}
+	// 从背包中减去每个合成列表的物品，得到目的物品
+	p_itemName = stat.p_sourceItemList;
+	for (int i = 0; i < stat.sourceItemListCount; ++i)
+	{
+		RemoveHandle(*p_itemName, 1);
+		++p_itemName;
+	}
+	AddHandle(stat.destinationItem, 1);
+
+	// 打印消息
+	cout << "Get a " << stat.destinationItem << ",";
+	p_itemName = stat.p_sourceItemList;
+	for (int i = 0; i < stat.sourceItemListCount; ++i)
+	{
+		cout << " " << *p_itemName << " ";
+		++p_itemName;
+	}
+	cout << "is Mixed\n";
+	return true;
 }
 
 void Backpack::UpdateBoxUseHistory(int i)
