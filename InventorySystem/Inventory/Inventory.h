@@ -5,11 +5,18 @@
 
 class Inventory
 {
-public:
+//------------------------------------------------------------
+// 利用饿汉单例模式实现线程安全
+protected:
 	// 创建新的仓库对象
 	// 新的仓库包含ItemType数目个二叉搜索树（一个搜索树对应一个类别）
 	Inventory();
-
+private:
+	static Inventory* p;
+public:
+	static Inventory* GetInstance();
+//------------------------------------------------------------
+public:
 	// 从Inventory中移除一个Item
 	bool Remove(const Item & item, int quantity);
 

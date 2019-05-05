@@ -19,9 +19,11 @@ void PlayerGetFromInventory(Backpack* p_backpack, ItemManager* p_itemManager);
 
 int main()
 {
-	Inventory* p_inventory = new Inventory();
+	Inventory* p_inventory = Inventory::GetInstance();
 	ItemManager* p_itemManager = new ItemManager();
-	Backpack* p_backpack = new Backpack(p_inventory, p_itemManager);
+	Backpack* p_backpack = Backpack::GetInstance();
+	p_backpack->SetInventory(p_inventory);
+	p_backpack->SetItemManager(p_itemManager);
 	InitializeBackpack(p_backpack, p_itemManager);
 
 	int input;

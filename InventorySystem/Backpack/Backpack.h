@@ -15,11 +15,25 @@ using namespace std;
 
 class Backpack
 {
+//------------------------------------------------------------
+// 利用饿汉单例模式实现线程安全
+protected:
+	Backpack();
+private:
+	static Backpack* p;
+public:
+	static Backpack* GetInstance();
+//------------------------------------------------------------
 public:
 	// 关联的Inventory
 	Inventory* p_inventory;
 
-	Backpack(Inventory *p_inventory, ItemFactory* p_itemFactory);
+	// 设置关联的Inventory
+	void SetInventory(Inventory* p_inventory);
+
+	// 设置ItemManager
+	void SetItemManager(ItemFactory *p_itemFactory);
+
 	~Backpack();
 
 	// 捡起一个物品

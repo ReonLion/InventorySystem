@@ -1,6 +1,16 @@
 #include "Inventory.h"
 #include <iostream>
 
+//------------------------------------------------------------
+// 利用饿汉单例模式实现线程安全
+Inventory* Inventory::p = new Inventory;
+
+Inventory * Inventory::GetInstance()
+{
+	return p;
+}
+//------------------------------------------------------------
+
 Inventory::Inventory()
 {
 	for (int i = 0; i < SubTreeNum; ++i)

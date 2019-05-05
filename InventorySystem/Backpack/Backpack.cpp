@@ -3,14 +3,28 @@
 
 using namespace std;
 
-Backpack::Backpack(Inventory *p_inventory, ItemFactory* p_itemFactory)
+//------------------------------------------------------------
+// 利用饿汉单例模式实现线程安全
+Backpack* Backpack::p = new Backpack;
+
+Backpack * Backpack::GetInstance()
 {
-	// 关联Inventory
+	return p;
+}
+//------------------------------------------------------------
+
+void Backpack::SetInventory(Inventory * p_inventory)
+{
 	this->p_inventory = p_inventory;
+}
 
-	//
+void Backpack::SetItemManager(ItemFactory * p_itemFactory)
+{
 	this->p_itemFactory = p_itemFactory;
+}
 
+Backpack::Backpack()
+{
 	// 初始化boxUseHistoy，例[1,2,3,4,5,6,7,8]
 	for (int i = 0; i < capacity; ++i)
 	{
