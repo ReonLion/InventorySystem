@@ -2,6 +2,17 @@
 
 ItemManager::ItemManager()
 {
+	ItemMixTable.resize(2);
+	// "Little HP Potion + Middle HP Potion + Big HP Potion = Super HP Potion"
+	ItemMixTable[0].push_back("Little HP Potion");
+	ItemMixTable[0].push_back("Middle HP Potion");
+	ItemMixTable[0].push_back("Big HP Potion");
+	ItemMixTable[0].push_back("Super HP Potion");
+	// "Little MP Potion + Middle MP Potion + Big HP Potion = Super MP Potion"
+	ItemMixTable[1].push_back("Little MP Potion");
+	ItemMixTable[1].push_back("Middle MP Potion");
+	ItemMixTable[1].push_back("Big MP Potion");
+	ItemMixTable[1].push_back("Super MP Potion");
 }
 
 ItemManager::~ItemManager()
@@ -82,13 +93,13 @@ Item * ItemManager::Create(string name)
 	{
 		return new CopperRing();
 	}
-	else if (name == "Cold Ring")
+	else if (name == "Gold Ring")
 	{
 		return new GoldRing();
 	}
 	else if (name == "Silver Ring")
 	{
-		return new SilverRing;
+		return new SilverRing();
 	}
 	else if (name == "Gold Coin")
 	{
@@ -96,7 +107,7 @@ Item * ItemManager::Create(string name)
 	}
 	else if (name == "Silver Coin")
 	{
-		return new SilverRing();
+		return new SilverCoin();
 	}
 	else
 	{

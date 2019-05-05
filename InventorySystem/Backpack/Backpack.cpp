@@ -24,6 +24,17 @@ Backpack::~Backpack()
 
 bool Backpack::Pick(Item * p_item, int quantity)
 {
+	if (!p_item->IsConsumable())
+	{
+		// 非消耗品
+		// 查看仓库和背包是否存在此物品
+		if ((HasItem(p_item) != -1) or p_inventory->Exist(p_item))
+		{
+			cout << "You already have a " << p_item->GetName() << endl;
+			// 不执行插入操作
+			return false;
+		}
+	}
 	bool res = AddHandle(p_item, quantity);
 	cout << "You pick up a " << p_item->GetName() << ", Backpack remains " << GetItemCount(p_item)
 		<< ", Inventory remains: " << p_inventory->Exist(p_item) << endl;
@@ -34,22 +45,41 @@ bool Backpack::UseBox(int i)
 {
 	if (boxes[i].p_item != nullptr)
 	{
-		// 产生一个缓存Item来使用
-		Item *p_item = p_itemFactory->Create(boxes[i].p_item->GetType(), boxes[i].p_item->GetId());
+		if (boxes[i].p_item->IsConsumable())
+		{
+			// 产生一个缓存Item来使用
+			Item *p_item = p_itemFactory->Create(boxes[i].p_item->GetType(), boxes[i].p_item->GetId());
 
-		// 调用item的Use()方法
-		p_item->Function();
-		// 从背包中remove 1个item
-		// 当数量变为0时，Remove会使p_item = nullptr
-		RemoveHandle(p_item, 1);
+			// 调用item的Use()方法
+			p_item->Function();
+			// 从背包中remove 1个item
+			// 当数量变为0时，Remove会使p_item = nullptr
+			RemoveHandle(p_item, 1);
 
-		// Debug
-		cout << "You use a " << p_item->GetName() << ", Backpack remains " << HasItem(p_item)
-			<< ", Inventory remains: " << p_inventory->Exist(p_item) << endl;
+			// Debug
+			cout << "You use a " << p_item->GetName() << ", Backpack remains " << HasItem(p_item)
+				<< ", Inventory remains: " << p_inventory->Exist(p_item) << endl;
 
-		// 删除缓存产生的item
-		delete p_item;
-		return true;
+			// 删除缓存产生的item
+			delete p_item;
+			return true;
+		}
+		else
+		{
+			// 非消耗品
+			// 产生一个缓存Item来使用
+			Item *p_item = p_itemFactory->Create(boxes[i].p_item->GetType(), boxes[i].p_item->GetId());
+
+			// 调用item的Use()方法
+			p_item->Function();
+
+			// Debug
+			cout << "You equip a " << p_item->GetName() << endl;
+
+			// 删除缓存产生的item
+			delete p_item;
+			return true;
+		}
 	}
 	else
 	{

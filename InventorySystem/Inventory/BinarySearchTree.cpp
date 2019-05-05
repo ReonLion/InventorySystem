@@ -106,7 +106,7 @@ bool BinarySearchTree::RemoveHandle(Node *& p_root, const TreeData & treeData, i
 	}
 	else if (*p_root->p_data == treeData)
 	{
-		if (p_root->quantity == 1)
+		if (p_root->quantity == quantity)
 		{
 			RemoveRoot(p_root);
 			removed = true;
