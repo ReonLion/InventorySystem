@@ -19,7 +19,6 @@ void PlayerGetFromInventory(Backpack* p_backpack, ItemManager* p_itemManager);
 
 int main()
 {
-	// ∂‡œﬂ≥Ã≤‚ ‘
 	Inventory* p_inventory = new Inventory();
 	ItemManager* p_itemManager = new ItemManager();
 	Backpack* p_backpack = new Backpack(p_inventory, p_itemManager);
