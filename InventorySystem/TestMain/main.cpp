@@ -105,7 +105,7 @@ void PlayerPickup(Backpack* p_backpack, ItemManager* p_itemManager)
 {
 	cout << "Choose a item to Pick up\n";
 	cout << "1. Little HP Potion\t2. Middle HP Potion\t3. Big HP Potion\n";
-	cout << "4. Little MP Potion\t5. Middle MP Potion\t6. BIg MP Potion\n";
+	cout << "4. Little MP Potion\t5. Middle MP Potion\t6. Big MP Potion\n";
 	cout << "7. Old Sword\t\t8. Russty Axe\t\t9.Magic Sword\n";
 	cout << "10. Iron Armour\t\t11. Old Robe\t\t12. Cute Skirt\n";
 	cout << "13. Gold Ring\t\t14. Silver Ring\t\t15. Copper Ring\n";
