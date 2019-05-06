@@ -92,6 +92,9 @@
     <ClInclude Include="TestMain\Weapons\RusstyAxe.h" />
     <ClInclude Include="TestMain\Weapons\Weapons.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{2995BC7A-5A1D-4FD1-81F8-8521DA6ED13D}</ProjectGuid>

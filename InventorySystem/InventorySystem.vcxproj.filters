@@ -282,4 +282,9 @@
       <Filter>Header Files\Main\Potions</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md">
+      <Filter>Source Files\Main</Filter>
+    </None>
+  </ItemGroup>
 </Project>
