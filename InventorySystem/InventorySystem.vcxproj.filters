@@ -283,8 +283,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md">
-      <Filter>Source Files\Main</Filter>
-    </None>
+    <None Include="..\README.md" />
   </ItemGroup>
 </Project>

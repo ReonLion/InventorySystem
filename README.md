@@ -20,17 +20,17 @@ Inventory具有n个二叉搜索树（每一个物品种类对应一棵树），无容量限制
 ##### Constructors
 Name | Description
 - | -
-Inventory::GetInstance() | 饿汉式单例，多线程安全`Array<String>`
+Inventory::GetInstance() | 饿汉式单例，多线程安全
 ##### Destructors
-Name | Description
-- | -
-~Inventory() | 
+|Name | Description |
+| - | - |
+|~Inventory() |  |
 ##### Functions
-Return | Name | Description
-- | - | -
-bool | Add(Item* p_item, int quantity) | 加入quantity个该item
-bool | Remove(const Item & item, int quantity) | 移除quantity个该item
-bool | Exist(Item* p_item) | 返回该item的个数，不存在则返回0
+| Return | Name | Description |
+| - | - | - |
+| bool | Add(Item* p_item, int quantity) | 加入quantity个该item |
+| bool | Remove(const Item & item, int quantity) | 移除quantity个该item |
+| bool | Exist(Item* p_item) | 返回该item的个数，不存在则返回0 |
 
 #### Backpack
 ##### Syntax
@@ -42,23 +42,23 @@ Backpack有一个数组，代表了n个可存放并使用物品的格子（n为backpack容量）
 有一个列表容器，存放格子的使用历史
 ##### Variables
 ##### Constructors
-Name | Description
-- | -
-Backpack::GetInstance() | 饿汉式单例，多线程安全`Array<String>`
+| Name | Description |
+| - | - |
+| Backpack::GetInstance() | 饿汉式单例，多线程安全 |
 ##### Destructors
-Name | Description
-- | -
-~Backpack() | 
+| Name | Description |
+| - | - |
+|~Backpack() |   |
 ##### Functions
-Return | Name | Description
-- | - | -
-void | SetInventory(Inventory* p_inventory) | 必须，设置与背包关联的仓库
-void | SetItemManager(ItemFactory *p_itemFactory) | 必须，设置Item生产工厂
-bool | Pick(Item* p_item, int quantity) | 拾起该item，放入背包，无空位则放入仓库
-bool | UseBox(int i) | 使用第i个格子里面的物品
-bool | bool GetFromInventory(Item* p_item) | 从仓库中获取物品到背包中
-void | MoveToInventory(Item* p_item) | 将item从背包移入到仓库中，可能发生交换
-int | GetItemCount(Item* p_item) const | 返回item在背包中的个数，没有则为0
+| Return | Name | Description |
+| - | - | - |
+| void | SetInventory(Inventory* p_inventory) | 必须，设置与背包关联的仓库 |
+| void | SetItemManager(ItemFactory *p_itemFactory) | 必须，设置Item生产工厂 |
+| bool | Pick(Item* p_item, int quantity) | 拾起该item，放入背包，无空位则放入仓库 |
+| bool | UseBox(int i) | 使用第i个格子里面的物品 |
+| bool | bool GetFromInventory(Item* p_item) | 从仓库中获取物品到背包中 |
+| void | MoveToInventory(Item* p_item) | 将item从背包移入到仓库中，可能发生交换 |
+| int | GetItemCount(Item* p_item) const | 返回item在背包中的个数，没有则为0 |
 
 #### ItemFactory
 ##### Remarks
